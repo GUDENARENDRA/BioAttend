@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_dark_gradient"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <!-- Header Title -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Time Table Schedule"
+        android:textColor="@color/neon_cyan"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:shadowColor="@color/neon_cyan"
+        android:shadowRadius="10"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Action Buttons Bar: Add Slot & Import Schedule -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:layout_marginBottom="10dp">
+
+        <Button
+            android:id="@+id/btnAddSlot"
+            android:layout_width="0dp"
+            android:layout_height="46dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="6dp"
+            android:background="@drawable/bg_button_cyan"
+            android:text="+ Add Slot"
+            android:textColor="@color/bg_dark_obsidian"
+            android:textStyle="bold"
+            android:textSize="13sp" />
+
+        <Button
+            android:id="@+id/btnImportPdf"
+            android:layout_width="0dp"
+            android:layout_height="46dp"
+            android:layout_weight="1"
+            android:layout_marginStart="6dp"
+            android:background="@drawable/bg_button_violet"
+            android:text="Import Schedule PDF"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <!-- Delete All Slots Button -->
+    <Button
+        android:id="@+id/btnDeleteAllSlots"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="@drawable/bg_glass_card"
+        android:text="DELETE ALL SLOTS"
+        android:textColor="#FF4B4B"
+        android:textStyle="bold"
+        android:textSize="13sp"
+        android:layout_marginBottom="12dp" />
+
+    <!-- Zoom Control Bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@drawable/bg_glass_card"
+        android:padding="8dp"
+        android:layout_marginBottom="10dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Schedule Scale / Zoom:"
+            android:textColor="@color/neon_cyan"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnZoomOutTimetable"
+            android:layout_width="40dp"
+            android:layout_height="36dp"
+            android:background="@drawable/bg_button_cyan"
+            android:text=""
+            android:textColor="@color/bg_dark_obsidian"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:padding="0dp"
+            android:layout_marginEnd="6dp" />
+
+        <Button
+            android:id="@+id/btnZoomResetTimetable"
+            android:layout_width="56dp"
+            android:layout_height="36dp"
+            android:background="@drawable/bg_glass_card"
+            android:text="100%"
+            android:textColor="@color/neon_cyan"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:padding="0dp"
+            android:layout_marginEnd="6dp" />
+
+        <Button
+            android:id="@+id/btnZoomInTimetable"
+            android:layout_width="40dp"
+            android:layout_height="36dp"
+            android:background="@drawable/bg_button_cyan"
+            android:text="+"
+            android:textColor="@color/bg_dark_obsidian"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:padding="0dp" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvTimetableAdmin"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <TextView
+        android:id="@+id/tvEmptyTimetable"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="No schedule slots configured.\nTap '+ Add Slot' or 'Import Schedule PDF' to build your timetable."
+        android:textColor="@color/text_secondary"
+        android:textSize="14sp"
+        android:visibility="gone" />
+
+</LinearLayout>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_glass_card"
+    android:orientation="horizontal"
+    android:paddingVertical="8dp"
+    android:paddingHorizontal="6dp"
+    android:layout_marginBottom="4dp"
+    android:gravity="center_vertical">
+
+    <TextView android:id="@+id/tvRowSrNo" android:layout_width="40dp" android:layout_height="wrap_content" android:text="1" android:textColor="@color/neon_cyan" android:textStyle="bold" android:textSize="11sp" android:gravity="center" />
+    <TextView android:id="@+id/tvRowSlotId" android:layout_width="80dp" android:layout_height="wrap_content" android:text="Slot 1" android:textColor="@color/neon_cyan" android:textStyle="bold" android:textSize="11sp" android:gravity="center" />
+    <TextView android:id="@+id/tvRowName" android:layout_width="140dp" android:layout_height="wrap_content" android:text="Aarav Mehta" android:textColor="@color/text_primary" android:textStyle="bold" android:textSize="11sp" />
+    <TextView android:id="@+id/tvRowClass" android:layout_width="100dp" android:layout_height="wrap_content" android:text="Sem 7-ICT" android:textColor="@color/text_secondary" android:textSize="11sp" />
+    <TextView android:id="@+id/tvRowGrNo" android:layout_width="75dp" android:layout_height="wrap_content" android:text="1001" android:textColor="@color/text_secondary" android:textSize="11sp" />
+    <TextView android:id="@+id/tvRowEnrollNo" android:layout_width="110dp" android:layout_height="wrap_content" android:text="23ICT001" android:textColor="@color/text_primary" android:textSize="11sp" />
+</LinearLayout>

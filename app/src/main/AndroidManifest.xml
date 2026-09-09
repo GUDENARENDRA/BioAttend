@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.mpc.bioattend">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="BioAttend"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.BioAttend"
+        android:usesCleartextTraffic="true">
+
+        <!-- FileProvider for CSV/Excel File Sharing -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.mpc.bioattend.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <!-- Authentication Launcher Activity -->
+        <activity
+            android:name=".ui.AuthActivity"
+            android:exported="true"
+            android:label="BioAttend - Sign In">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Main Timetable Dashboard Activity -->
+        <activity
+            android:name=".ui.MainActivity"
+            android:exported="false"
+            android:label="BioAttend" />
+
+        <!-- Connectivity Full Page Activity -->
+        <activity
+            android:name=".ui.ConnectivityActivity"
+            android:exported="false"
+            android:label="Connectivity &amp; Wi-Fi"
+            android:parentActivityName=".ui.MainActivity" />
+
+        <!-- User Data Excel Schema Activity -->
+        <activity
+            android:name=".ui.UserDataActivity"
+            android:exported="false"
+            android:label="User Data"
+            android:parentActivityName=".ui.MainActivity" />
+
+        <!-- Dedicated Enrolled Sensor IDs Excel Activity -->
+        <activity
+            android:name=".ui.EnrolledIdListActivity"
+            android:exported="false"
+            android:label="Enrolled Sensor IDs"
+            android:parentActivityName=".ui.MainActivity" />
+
+        <!-- Edit Student Full Page Activity -->
+        <activity
+            android:name=".ui.EditStudentActivity"
+            android:exported="false"
+            android:label="Student Record Editor"
+            android:parentActivityName=".ui.UserDataActivity" />
+
+        <!-- Time Table Manager Activity -->
+        <activity
+            android:name=".ui.TimetableActivity"
+            android:exported="false"
+            android:label="Time Table Schedule"
+            android:parentActivityName=".ui.MainActivity" />
+
+        <!-- Edit Timetable Slot Full Page Activity -->
+        <activity
+            android:name=".ui.EditSlotActivity"
+            android:exported="false"
+            android:label="Schedule Slot Editor"
+            android:parentActivityName=".ui.TimetableActivity" />
+
+        <!-- Enrollment Manager Activity -->
+        <activity
+            android:name=".ui.EnrollmentManagerActivity"
+            android:exported="false"
+            android:label="Enrollment Manager"
+            android:parentActivityName=".ui.MainActivity" />
+
+        <!-- Enroll Student Fingerprint Full Page Activity -->
+        <activity
+            android:name=".ui.EnrollStudentActivity"
+            android:exported="false"
+            android:label="Fingerprint Enrollment"
+            android:parentActivityName=".ui.EnrollmentManagerActivity" />
+
+        <!-- Time-Locked Class Attendance Session Activity -->
+        <activity
+            android:name=".ui.ClassAttendanceActivity"
+            android:exported="false"
+            android:label="Class Attendance Session"
+            android:parentActivityName=".ui.MainActivity" />
+
+        <!-- Biometrics Legacy Hub Activity -->
+        <activity
+            android:name=".ui.FingerprintActivity"
+            android:exported="false"
+            android:label="Biometrics"
+            android:parentActivityName=".ui.MainActivity" />
+
+    </application>
+
+</manifest>

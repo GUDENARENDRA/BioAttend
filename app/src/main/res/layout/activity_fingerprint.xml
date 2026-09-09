@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_dark_gradient"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Biometric &amp; Attendance"
+        android:textColor="@color/neon_emerald"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:shadowColor="@color/neon_emerald"
+        android:shadowRadius="10" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="R307S Sensor Control &amp; Identification Hub"
+        android:textColor="@color/text_secondary"
+        android:textSize="12sp"
+        android:layout_marginBottom="24dp" />
+
+    <!-- Action 1: Enroll -->
+    <Button
+        android:id="@+id/btnEnrollPage"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/bg_button_emerald"
+        android:text=" Enroll Fingerprint &amp; Link Student"
+        android:textColor="@color/bg_dark_obsidian"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <!-- Action 2: Identify & Mark Attendance -->
+    <Button
+        android:id="@+id/btnIdentifyPage"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/bg_button_cyan"
+        android:text=" Search Fingerprint &amp; Mark Attendance"
+        android:textColor="@color/bg_dark_obsidian"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <!-- Action 3: Count -->
+    <Button
+        android:id="@+id/btnCheckCount"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/bg_button_violet"
+        android:text=" Check Total Enrolled Fingerprints Count"
+        android:textColor="#FFFFFF"
+        android:textSize="13sp"
+        android:textStyle="bold" />
+
+    <!-- Danger Actions Row -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:layout_marginBottom="20dp">
+
+        <Button
+            android:id="@+id/btnDeleteSingle"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="6dp"
+            android:background="#20FF4B4B"
+            android:text=" Delete Single ID"
+            android:textColor="@color/neon_red"
+            android:textStyle="bold"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/btnDeleteAll"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:layout_marginStart="6dp"
+            android:background="#40FF4B4B"
+            android:text=" Wipe All Memory"
+            android:textColor="@color/neon_red"
+            android:textStyle="bold"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <!-- Output Console -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/bg_glass_card"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Biometric Hardware Status"
+            android:textColor="@color/text_secondary"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvFingerprintOutput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Select an action above to execute fingerprint operations."
+            android:textColor="@color/text_primary"
+            android:textSize="13sp"
+            android:layout_marginTop="8dp" />
+    </LinearLayout>
+
+</LinearLayout>

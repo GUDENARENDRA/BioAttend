@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cardEnrollmentItem"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_glass_card"
+    android:orientation="horizontal"
+    android:paddingVertical="10dp"
+    android:paddingHorizontal="6dp"
+    android:layout_marginBottom="6dp"
+    android:gravity="center_vertical">
+
+    <!-- 1. Sr.No -->
+    <TextView
+        android:id="@+id/tvRowSrNo"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:text="1"
+        android:textColor="@color/neon_cyan"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:gravity="center" />
+
+    <!-- 2. Fingerprint Slot ID -->
+    <TextView
+        android:id="@+id/tvRowFingerId"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:text="Slot 2"
+        android:textColor="@color/neon_violet"
+        android:textSize="11sp"
+        android:textStyle="bold"
+        android:gravity="center" />
+
+    <!-- 2. Student Name -->
+    <TextView
+        android:id="@+id/tvRowStudentName"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:text="Student Name"
+        android:textColor="@color/text_primary"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:paddingHorizontal="4dp" />
+
+    <!-- 3. Class / Sem -->
+    <TextView
+        android:id="@+id/tvRowClassSem"
+        android:layout_width="90dp"
+        android:layout_height="wrap_content"
+        android:text="Sem 7-ICT"
+        android:textColor="@color/text_secondary"
+        android:textSize="11sp"
+        android:gravity="center" />
+
+    <!-- 4. GR.No -->
+    <TextView
+        android:id="@+id/tvRowGrNo"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:text="GR1020"
+        android:textColor="@color/text_secondary"
+        android:textSize="11sp"
+        android:gravity="center" />
+
+    <!-- 5. Enrollment No -->
+    <TextView
+        android:id="@+id/tvRowEnrollmentNo"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="23ICT001"
+        android:textColor="@color/neon_amber"
+        android:textSize="11sp"
+        android:textStyle="bold"
+        android:gravity="center" />
+
+    <!-- 8. Status Badge -->
+    <TextView
+        android:id="@+id/tvRowEnrollStatus"
+        android:layout_width="95dp"
+        android:layout_height="wrap_content"
+        android:text="ENROLLED "
+        android:textColor="@color/neon_emerald"
+        android:textSize="11sp"
+        android:textStyle="bold"
+        android:gravity="center" />
+
+    <!-- 9. Actions (Enroll & Delete) -->
+    <LinearLayout
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btnDeleteSingleFinger"
+            android:layout_width="65dp"
+            android:layout_height="34dp"
+            android:background="#40FF4B4B"
+            android:text="Delete"
+            android:textColor="@color/neon_red"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:padding="0dp"
+            android:layout_marginEnd="4dp"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/btnEnrollFinger"
+            android:layout_width="75dp"
+            android:layout_height="34dp"
+            android:background="@drawable/bg_button_emerald"
+            android:text="Enroll"
+            android:textColor="@color/bg_dark_obsidian"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:padding="0dp" />
+    </LinearLayout>
+
+</LinearLayout>

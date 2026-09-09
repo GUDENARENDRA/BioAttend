@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_dark_gradient"
+    android:orientation="vertical"
+    android:padding="12dp">
+
+    <!-- Header Card -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_glass_card"
+        android:orientation="vertical"
+        android:padding="12dp"
+        android:layout_marginBottom="12dp">
+
+        <TextView
+            android:id="@+id/tvSubjectHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MPC - Mobile &amp; Pervasive Computing"
+            android:textColor="@color/neon_cyan"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvClassDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Time: 11:00 - 12:30 | Room: MA106 | Faculty: Dr. Mitesh Solanki"
+            android:textColor="@color/text_secondary"
+            android:textSize="11sp"
+            android:layout_marginTop="2dp" />
+    </LinearLayout>
+
+    <!-- Biometric Action Row -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="10dp">
+
+        <Button
+            android:id="@+id/btnStartFingerScan"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="6dp"
+            android:background="@drawable/bg_button_cyan"
+            android:text=" Scan Fingerprint Now"
+            android:textColor="@color/bg_dark_obsidian"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnExportSessionCsv"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:background="@drawable/bg_button_emerald"
+            android:text=" Export CSV"
+            android:textColor="@color/bg_dark_obsidian"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBarAttendance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Status Output Box -->
+    <TextView
+        android:id="@+id/tvSessionStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Press 'Scan Fingerprint Now' and place finger on R307S sensor."
+        android:textColor="@color/text_secondary"
+        android:textSize="12sp"
+        android:layout_marginBottom="10dp" />
+
+    <!-- Session Present Students Header Bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="8dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Present Students (Current Session Excel Sheet)"
+            android:textColor="@color/neon_emerald"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnAttendanceZoomReset"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:background="@drawable/bg_glass_card"
+            android:text=" Pinch (100%)"
+            android:textColor="@color/neon_cyan"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:paddingHorizontal="8dp" />
+    </LinearLayout>
+
+    <!-- Zoomable Container for Class Attendance Excel Sheet -->
+    <com.mpc.bioattend.util.ZoomableFrameLayout
+        android:id="@+id/zoomableClassAttendanceContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:id="@+id/layoutClassAttendanceTableRoot"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <!-- Excel Table Header -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#1E293B"
+                    android:orientation="horizontal"
+                    android:paddingVertical="10dp"
+                    android:paddingHorizontal="6dp"
+                    android:layout_marginBottom="4dp">
+
+                    <TextView android:layout_width="40dp" android:layout_height="wrap_content" android:text="Sr.No" android:textColor="@color/neon_cyan" android:textStyle="bold" android:textSize="11sp" android:gravity="center" />
+                    <TextView android:layout_width="75dp" android:layout_height="wrap_content" android:text="Finger ID" android:textColor="@color/neon_cyan" android:textStyle="bold" android:textSize="11sp" android:gravity="center" />
+                    <TextView android:layout_width="130dp" android:layout_height="wrap_content" android:text="Student Name" android:textColor="@color/neon_cyan" android:textStyle="bold" android:textSize="11sp" android:paddingHorizontal="4dp" />
+                    <TextView android:layout_width="90dp" android:layout_height="wrap_content" android:text="Class/Sem" android:textColor="@color/neon_cyan" android:textStyle="bold" android:textSize="11sp" android:gravity="center" />
+                    <TextView android:layout_width="80dp" android:layout_height="wrap_content" android:text="GR.No" android:textColor="@color/neon_cyan" android:textStyle="bold" android:textSize="11sp" android:gravity="center" />
+                    <TextView android:layout_width="100dp" android:layout_height="wrap_content" android:text="Enrollment" android:textColor="@color/neon_cyan" android:textStyle="bold" android:textSize="11sp" android:gravity="center" />
+                    <TextView android:layout_width="65dp" android:layout_height="wrap_content" android:text="Attended" android:textColor="@color/neon_cyan" android:textStyle="bold" android:textSize="11sp" android:gravity="center" />
+                    <TextView android:layout_width="95dp" android:layout_height="wrap_content" android:text="Status" android:textColor="@color/neon_cyan" android:textStyle="bold" android:textSize="11sp" android:gravity="center" />
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvAttendingStudents"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
+        </HorizontalScrollView>
+    </com.mpc.bioattend.util.ZoomableFrameLayout>
+
+    <TextView
+        android:id="@+id/tvEmptySessionList"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="No attendance marked yet for this session.\nScan fingerprint on R307S sensor panel."
+        android:textColor="@color/text_secondary"
+        android:textSize="13sp" />
+
+</LinearLayout>

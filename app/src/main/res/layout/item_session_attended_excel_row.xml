@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_glass_card"
+    android:orientation="horizontal"
+    android:paddingVertical="10dp"
+    android:paddingHorizontal="6dp"
+    android:layout_marginBottom="6dp"
+    android:gravity="center_vertical">
+
+    <!-- 1. Sr.No -->
+    <TextView
+        android:id="@+id/tvSessionSrNo"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:text="1"
+        android:textColor="@color/neon_cyan"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:gravity="center" />
+
+    <!-- 2. Fingerprint Slot ID -->
+    <TextView
+        android:id="@+id/tvSessionFingerId"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:text="Slot 2"
+        android:textColor="@color/neon_violet"
+        android:textSize="11sp"
+        android:textStyle="bold"
+        android:gravity="center" />
+
+    <!-- 2. Student Name -->
+    <TextView
+        android:id="@+id/tvSessionStudentName"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:text="Student Name"
+        android:textColor="@color/text_primary"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:paddingHorizontal="4dp" />
+
+    <!-- 3. Class / Sem -->
+    <TextView
+        android:id="@+id/tvSessionClassSem"
+        android:layout_width="90dp"
+        android:layout_height="wrap_content"
+        android:text="Sem 7-ICT"
+        android:textColor="@color/text_secondary"
+        android:textSize="11sp"
+        android:gravity="center" />
+
+    <!-- 4. GR.No -->
+    <TextView
+        android:id="@+id/tvSessionGrNo"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:text="GR1020"
+        android:textColor="@color/text_secondary"
+        android:textSize="11sp"
+        android:gravity="center" />
+
+    <!-- 5. Enrollment No -->
+    <TextView
+        android:id="@+id/tvSessionEnrollNo"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="23ICT001"
+        android:textColor="@color/neon_amber"
+        android:textSize="11sp"
+        android:textStyle="bold"
+        android:gravity="center" />
+
+    <!-- 8. Total Attended Count -->
+    <TextView
+        android:id="@+id/tvSessionAttendedCount"
+        android:layout_width="65dp"
+        android:layout_height="wrap_content"
+        android:text="4"
+        android:textColor="@color/neon_emerald"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:gravity="center" />
+
+    <!-- 9. Status Badge -->
+    <TextView
+        android:id="@+id/tvSessionStatusBadge"
+        android:layout_width="95dp"
+        android:layout_height="wrap_content"
+        android:background="#2000F5A0"
+        android:paddingHorizontal="6dp"
+        android:paddingVertical="4dp"
+        android:text="PRESENT "
+        android:textColor="@color/neon_emerald"
+        android:textSize="11sp"
+        android:textStyle="bold"
+        android:gravity="center" />
+
+</LinearLayout>

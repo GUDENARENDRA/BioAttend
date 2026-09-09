@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_dark_gradient"
+    android:orientation="vertical"
+    android:padding="12dp">
+
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="12dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Enrollment Manager (Excel View)"
+            android:textColor="@color/neon_emerald"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:shadowColor="@color/neon_emerald"
+            android:shadowRadius="10"
+            android:layout_marginBottom="8dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnSortEnrolledId"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_button_cyan"
+                android:text="Sort: Sensor ID (ASC)"
+                android:textColor="@color/bg_dark_obsidian"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:layout_marginEnd="6dp" />
+
+            <Button
+                android:id="@+id/btnWipeAllFingerprints"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="#40FF4B4B"
+                android:text="Wipe All Memory"
+                android:textColor="@color/neon_red"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Search & Touch Zoom Control Bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@drawable/bg_glass_card"
+        android:padding="8dp"
+        android:layout_marginBottom="10dp">
+
+        <EditText
+            android:id="@+id/etSearchEnrollment"
+            android:layout_width="0dp"
+            android:layout_height="38dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_glass_card"
+            android:hint=" Search Name, ID, GR, Slot..."
+            android:textColor="@color/text_primary"
+            android:textColorHint="@color/text_secondary"
+            android:textSize="12sp"
+            android:paddingHorizontal="10dp"
+            android:inputType="text"
+            android:layout_marginEnd="8dp" />
+
+        <Button
+            android:id="@+id/btnEnrollZoomReset"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:background="@drawable/bg_glass_card"
+            android:text=" Pinch to Zoom (100%)"
+            android:textColor="@color/neon_cyan"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:paddingHorizontal="10dp" />
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBarEnrollmentManager"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Zoomable Container for Excel Table -->
+    <com.mpc.bioattend.util.ZoomableFrameLayout
+        android:id="@+id/zoomableEnrollmentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:id="@+id/layoutEnrollmentTableRoot"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <!-- Table Header Bar -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#1E293B"
+                    android:orientation="horizontal"
+                    android:paddingVertical="10dp"
+                    android:paddingHorizontal="6dp"
+                    android:layout_marginBottom="4dp">
+
+                    <TextView android:layout_width="40dp" android:layout_height="wrap_content" android:text="Sr.No" android:textColor="@color/neon_cyan" android:textStyle="bold" android:textSize="11sp" android:gravity="center" />
+                    <TextView android:layout_width="75dp" android:layout_height="wrap_content" android:text="Finger ID" android:textColor="@color/neon_cyan" android:textStyle="bold" android:textSize="11sp" android:gravity="center" />
+                    <TextView android:layout_width="130dp" android:layout_height="wrap_content" android:text="Student Name" android:textColor="@color/neon_cyan" android:textStyle="bold" android:textSize="11sp" android:paddingHorizontal="4dp" />
+                    <TextView android:layout_width="90dp" android:layout_height="wrap_content" android:text="Class/Sem" android:textColor="@color/neon_cyan" android:textStyle="bold" android:textSize="11sp" android:gravity="center" />
+                    <TextView android:layout_width="80dp" android:layout_height="wrap_content" android:text="GR.No" android:textColor="@color/neon_cyan" android:textStyle="bold" android:textSize="11sp" android:gravity="center" />
+                    <TextView android:layout_width="100dp" android:layout_height="wrap_content" android:text="Enrollment" android:textColor="@color/neon_cyan" android:textStyle="bold" android:textSize="11sp" android:gravity="center" />
+                    <TextView android:layout_width="95dp" android:layout_height="wrap_content" android:text="Status" android:textColor="@color/neon_cyan" android:textStyle="bold" android:textSize="11sp" android:gravity="center" />
+                    <TextView android:layout_width="150dp" android:layout_height="wrap_content" android:text="Actions" android:textColor="@color/neon_cyan" android:textStyle="bold" android:textSize="11sp" android:gravity="center" />
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvEnrollmentList"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
+        </HorizontalScrollView>
+    </com.mpc.bioattend.util.ZoomableFrameLayout>
+
+    <TextView
+        android:id="@+id/tvEmptyEnrollment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="No student profiles found for enrollment."
+        android:textColor="@color/text_secondary"
+        android:textSize="14sp"
+        android:visibility="gone" />
+
+</LinearLayout>

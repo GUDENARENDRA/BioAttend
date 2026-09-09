@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Background colors -->
+    <color name="bg_dark_obsidian">#070A14</color>
+    <color name="bg_dark_deep">#0F172A</color>
+    <color name="bg_card_glass">#141E33</color>
+    <color name="bg_card_glass_stroke">#263554</color>
+    <color name="bg_input">#090E1A</color>
+
+    <!-- Glowing Neon Accent Palette -->
+    <color name="neon_cyan">#00F2FE</color>
+    <color name="neon_blue">#4FACFE</color>
+    <color name="neon_violet">#9B51E0</color>
+    <color name="neon_purple">#7000FF</color>
+    <color name="neon_emerald">#00F5A0</color>
+    <color name="neon_teal">#00D2FF</color>
+    <color name="neon_amber">#FFB800</color>
+    <color name="neon_red">#FF4B4B</color>
+
+    <!-- Text colors -->
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#94A3B8</color>
+    <color name="text_muted">#64748B</color>
+</resources>
